@@ -89,7 +89,7 @@ Chris Dew
 Jim Wilson
 ~~~~
 
-### 7.1 Contact
+### 4.2 Contact
 
 This specification and any related work is located at <https://github.com/ldjson>. 
 Discussion and help can be found on the LDJSON Google group located at <https://groups.google.com/d/forum/ldjson>
