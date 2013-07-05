@@ -63,7 +63,7 @@ The reference NodeJS/Javascript implementation can be found on github.
 
 ### 3.3 MIME Type and File Extensions
 
-When using HTTP/email the \[[MIME type]\] for Line Delimited JSON SHOULD be _application/x-ldjson_.
+When using HTTP/email the \[[MediaType|RFC4288]\] for Line Delimited JSON SHOULD be _application/x-ldjson_.
 
 When saved in a file, the file extension SHOULD be _.ldjson_ or _.ldj_
 
