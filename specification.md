@@ -10,7 +10,7 @@ A standard for delimiting JSON in stream protocols (such as \[[TCP]\]).
 
 There is currently no standard for transporting JSON within a stream protocol, apart from \[[Websockets]\], which is unnecessarily complex for non-browser applications.
 
-There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters (DLE STX ETX or Websocket’s 0xFFs).
+There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters (DLE STX ETX or Websocketï¿½s 0xFFs).
 
 The primary use case for LDJSON is an unending stream of JSON objects, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
 
@@ -45,7 +45,7 @@ All serialized data MUST use the UTF8 encoding.
 
 The receiver SHOULD handle pretty-printed (multi-line) JSON.
 
-The receiver MUST accept all common line endings: ‘0x0A’ (Unix), ‘0x0D’ (Mac OS), ‘0x0D0A’ (Windows).
+The receiver MUST accept all common line endings: ï¿½0x0Aï¿½ (Unix), ï¿½0x0Dï¿½ (Mac OS), ï¿½0x0D0Aï¿½ (Windows).
 
 #### 3.2.1 Trivial Implementation
 
@@ -73,7 +73,7 @@ This specification is copyrighted by the authors named in section 4.1. It is fre
 
 ### 4.1 Authors
 
-The following authors are responsible for the RestDoc core-specification:
+The following authors are responsible for the LDJSON core-specification:
 
 ~~~~
 Thorsten Hoeger
@@ -84,6 +84,7 @@ thorsten.hoeger@taimos.de
 ~~~~
 ~~~~
 Chris Dew
+chris.dew@barricane.com
 ~~~~
 ~~~~
 Jim Wilson
