@@ -1,4 +1,4 @@
-# LDJSON - Line delimited JSON
+# NDJSON - Newline delimited JSON
 
 # Draft 2 (2013-07-27)
 
@@ -10,7 +10,7 @@ A standard for delimiting JSON in stream protocols (such as \[[TCP]\]).
 
 There is currently no standard for transporting JSON within a stream protocol, apart from \[[Websockets]\], which is unnecessarily complex for non-browser applications.
 
-There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters (DLE STX ETX or Websocket�s 0xFFs).
+There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters.
 
 The primary use case for LDJSON is an unending stream of JSON objects, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
 
@@ -32,13 +32,13 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### 3.1 Sending
 
-Each JSON object MUST be written to the stream followed by the newline character 0x0A. The JSON objects MUST NOT contain newlines or carriage returns.
+Each JSON object MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON objects MUST NOT contain newlines or carriage returns.
 
 All serialized data MUST use the UTF8 encoding.
 
 ### 3.2 Receiving
 
-The receiver MUST accept newline as line delimiter: �0x0A� (Unix)
+The receiver MUST accept newline as line delimiter `\n` (0x0A) as well as carriage return and newline `\r\n` (0x0D0A). The receiver SHOULD silently ignore empty lines, e.g. `\n\n`.
 
 #### 3.2.1 Trivial Implementation
 
@@ -46,19 +46,11 @@ A simple implementation is to accumulate received lines. Every time a line endin
 
 If the parsing of the accumulated lines is successful, the accumulated lines MUST be discarded and the parsed object given to the application code.
 
-If the amount of unparsed, accumulated characters exceeds 16MiB the receiver MAY close the stream. Resource constrained devices MAY close the stream at a lower threshold, though they MUST accept at least 1KiB.
-
-#### 3.2.2 Other Implementations
-
-Alternate, more efficient, implementations are possible using a custom JSON parser.
-
-The reference NodeJS/Javascript implementation can be found on github.
-
 ### 3.3 MIME Type and File Extensions
 
-When using HTTP/email the MediaType \[[RFC4288]\] for Line Delimited JSON SHOULD be _application/x-ldjson_.
+The MediaType \[[RFC4288]\] for Line Delimited JSON SHOULD be _application/x-ndjson_.
 
-When saved in a file, the file extension SHOULD be _.ldjson_ or _.ldj_
+When saved in a file, the file extension SHOULD be _.ndjson_.
 
 ## 4. Copyright
 
@@ -66,7 +58,7 @@ This specification is copyrighted by the authors named in section 4.1. It is fre
 
 ### 4.1 Authors
 
-The following authors are responsible for the LDJSON core-specification:
+The following authors are responsible for the NDJSON core-specification:
 
 ~~~~
 Thorsten Hoeger
@@ -86,7 +78,7 @@ Jim Wilson
 ### 4.2 Contact
 
 This specification and any related work is located at <https://github.com/ldjson>. 
-Discussion and help can be found on the LDJSON Google group located at <https://groups.google.com/d/forum/ldjson>
+Discussion and help can be found on the issues page.
 
 ## A. References
 
