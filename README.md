@@ -1,4 +1,4 @@
-ldjson-spec
+ndjson-spec
 ===========
 
 Specification

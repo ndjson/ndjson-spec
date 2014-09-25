@@ -1,6 +1,6 @@
 # NDJSON - Newline delimited JSON
 
-# Draft 2 (2013-07-27)
+# Draft 2 (2014-09-25)
 
 A standard for delimiting JSON in stream protocols (such as \[[TCP]\]).
 
@@ -12,7 +12,7 @@ There is currently no standard for transporting JSON within a stream protocol, a
 
 There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters.
 
-The primary use case for LDJSON is an unending stream of JSON objects, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
+The primary use case for NDJSON is an unending stream of JSON objects, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
 
 
 ### 1.2 Terminology
@@ -48,7 +48,7 @@ If the parsing of the accumulated lines is successful, the accumulated lines MUS
 
 ### 3.3 MIME Type and File Extensions
 
-The MediaType \[[RFC4288]\] for Line Delimited JSON SHOULD be _application/x-ndjson_.
+The MediaType \[[RFC4288]\] for Newline Delimited JSON SHOULD be _application/x-ndjson_.
 
 When saved in a file, the file extension SHOULD be _.ndjson_.
 
@@ -77,7 +77,7 @@ Jim Wilson
 
 ### 4.2 Contact
 
-This specification and any related work is located at <https://github.com/ldjson>. 
+This specification and any related work is located at <https://github.com/ndjson>. 
 Discussion and help can be found on the issues page.
 
 ## A. References
