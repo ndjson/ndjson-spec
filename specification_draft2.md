@@ -40,15 +40,15 @@ All serialized data MUST use the UTF8 encoding.
 
 The receiver MUST accept newline as line delimiter `\n` (0x0A) as well as carriage return and newline `\r\n` (0x0D0A). The receiver SHOULD silently ignore empty lines, e.g. `\n\n`.
 
-#### 3.2.1 Trivial Implementation
+#### 3.2.1 Trivial Library Implementation
 
-A simple implementation is to accumulate received data. Every time a line ending is encountered, an attempt MUST be made to parse the accumulated data (up to the last line ending) into lines.  Data beyond the last line ending must be retained for future parsing.
+A simple implementation is to accumulate received data. Every time a line ending is encountered, an attempt MUST be made to parse the accumulated data (up to and including the last line ending) into lines.  Data beyond the last line ending must be retained for future parsing.
 
 If the data source closes, whithout a terminating line ending, an error MUST be generated for the application to consume.
 
-Each line, between (and including) the first '{' and the last '}' MUST be parsed as a JSON object, and given to the application.  Unparseable lines MAY be silently ignored, or MAY generate errors for the application to handle.
+Each line, between (and including) the first '{' and the last '}' MUST be parsed as a JSON object, and given to the application.  Unparseable lines MUST generate errors for the application to handle to ignore or handle.
 
-Note: Ignoring data outside of the outermost curly brackets gives Telnet-client compatibility for very little extra processing.  (The telnet protocol includes additional control sequences in with data, that can confuse JSON parsers.  The use of telnet to test NDJSON-based protocols is highly useful for Windows users without `nc`.)
+Note: Ignoring data outside of the outermost curly brackets gives Telnet-client compatibility for very little extra processing.  (The telnet protocol includes additional control sequences in the data stream, which can confuse JSON parsers.  The use of telnet to test NDJSON-based protocols is highly useful for Windows users without `nc`.)
 
 ### 3.3 MIME Type and File Extensions
 
