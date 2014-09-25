@@ -42,7 +42,7 @@ The receiver MUST accept newline as line delimiter `\n` (0x0A) as well as carria
 
 #### 3.2.1 Trivial Implementation
 
-A simple implementation is to accumulate received data. Every time a line ending is encountered, an attempt MUST be made to parse the accumulated data (up to the last line ending) into lines.  Data beyond the last line ending must be retained.
+A simple implementation is to accumulate received data. Every time a line ending is encountered, an attempt MUST be made to parse the accumulated data (up to the last line ending) into lines.  Data beyond the last line ending must be retained for future parsing.
 
 If the data source closes, whithout a terminating line ending, an error MUST be generated for the application to consume.
 
