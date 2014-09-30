@@ -12,7 +12,7 @@ There is currently no standard for transporting JSON within a stream protocol, a
 
 There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters.
 
-The primary use case for NDJSON is an unending stream of JSON objects, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
+The primary use case for NDJSON is streaming multiple instances of JSON text, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
 
 
 ### 1.2 Terminology
@@ -32,7 +32,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### 3.1 Sending
 
-Each JSON object MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON objects MUST NOT contain newlines or carriage returns.
+Each JSON text MUST conform to the \[[RFC7159]\]) standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
 
 All serialized data MUST use the UTF8 encoding.
 
@@ -72,6 +72,10 @@ Chris Dew
 chris.dew@barricane.com
 ~~~~
 ~~~~
+Finn Pauls
+ich@finnpauls.de
+~~~~
+~~~~
 Jim Wilson
 ~~~~
 
@@ -86,6 +90,9 @@ Discussion and help can be found on the issues page.
 
 [RFC2119]: http://www.ietf.org/rfc/rfc2119.txt "RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels"
 \[RFC2119\]: RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels
+
+[RFC7159]: http://www.ietf.org/rfc/rfc7159.txt "RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format"
+\[RFC7159\]: RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format
 
 [RFC4627]: http://www.ietf.org/rfc/rfc4627.txt "RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)"
 \[RFC4627\]: RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)
