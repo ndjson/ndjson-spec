@@ -2,37 +2,35 @@
 
 # Draft 2 (2014-09-25)
 
-A standard for delimiting JSON in stream protocols (such as \[[TCP]\]).
+A standard for delimiting JSON in stream protocols.
 
 ## 1. Introduction
 
 ## 1.1 About
 
-There is currently no standard for transporting JSON within a stream protocol, apart from \[[Websockets]\], which is unnecessarily complex for non-browser applications.
+There is currently no standard for transporting instances of JSON text within a stream protocol, apart from \[[Websockets]\], which is unnecessarily complex for non-browser applications.
 
-There were numerous possibilities for JSON framing, including counted strings and non-ASCII delimiters.
-
-The primary use case for NDJSON is streaming multiple instances of JSON text, delivered at variable times, over TCP, where each object needs to be processed as it arrives. e.g. a stream of stock quotes or chat messages.
+A common use case for NDJSON is delivering multiple instances of JSON text through streaming protocols like TCP or UNIX Pipes. It can also be used to
+store semi-structured data.
 
 
 ### 1.2 Terminology
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119. \[[RFC2119]\]
 
-## 2. Example Output
-
-(with \n line separators)
+## 2. Example NDJSON
 
 ~~~~~
  {"some":"thing"}
  {"foo":17,"bar":false,"quux":true}
  {"may":{"include":"nested","objects":["and","arrays"]}}
 ~~~~~
+(with `\n` line separators)
 
 ## 3. Functional Specification
 
 ### 3.1 Serialization
 
-Each JSON text MUST conform to the \[[RFC7159]\]) standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
+Each JSON text MUST conform to the \[[RFC7159]\] standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
 
 All serialized data MUST use the UTF8 encoding.
 
@@ -42,12 +40,6 @@ The parser MUST accept newline as line delimiter `\n` (0x0A) as well as carriage
 
 If the JSON text is not parseable, the parser SHOULD raise an error. However, the parser MAY silently ignore empty lines, e.g. `\n\n`. This behavior 
 MUST be documented and SHOULD be configurable by the user of the parser.
-
-#### 3.2.1 Trivial Implementation
-
-A simple implementation is to accumulate received lines. Every time a line ending is encountered, an attempt MUST be made to parse the accumulated lines into a JSON object.
-
-If the parsing of the accumulated lines is successful, the accumulated lines MUST be discarded and the parsed object given to the application code.
 
 ### 3.3 MIME Type and File Extensions
 
