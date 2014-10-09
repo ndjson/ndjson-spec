@@ -10,8 +10,7 @@ A standard for delimiting JSON in stream protocols.
 
 There is currently no standard for transporting instances of JSON text within a stream protocol, apart from \[[Websockets]\], which is unnecessarily complex for non-browser applications.
 
-A common use case for NDJSON is delivering multiple instances of JSON text through streaming protocols like TCP or UNIX Pipes. It can also be used to
-store semi-structured data.
+A common use case for NDJSON is delivering multiple instances of JSON text through streaming protocols like TCP or UNIX Pipes. It can also be used to store semi-structured data.
 
 
 ### 1.2 Terminology
@@ -38,14 +37,13 @@ All serialized data MUST use the UTF8 encoding.
 
 The parser MUST accept newline as line delimiter `\n` (0x0A) as well as carriage return and newline `\r\n` (0x0D0A). 
 
-If the JSON text is not parseable, the parser SHOULD raise an error. However, the parser MAY silently ignore empty lines, e.g. `\n\n`. This behavior 
-MUST be documented and SHOULD be configurable by the user of the parser.
+If the JSON text is not parseable, the parser SHOULD raise an error. The parser MAY silently ignore empty lines, e.g. `\n\n`. This behavior MUST be documented and SHOULD be configurable by the user of the parser.
 
-### 3.3 MIME Type and File Extensions
+### 3.3 MediaType and File Extensions
 
 The MediaType \[[RFC4288]\] for Newline Delimited JSON SHOULD be _application/x-ndjson_.
 
-When saved in a file, the file extension SHOULD be _.ndjson_.
+When saved to a file, the file extension SHOULD be _.ndjson_.
 
 ## 4. Copyright
 
@@ -77,7 +75,7 @@ Jim Wilson
 ### 4.2 Contact
 
 This specification and any related work is located at <https://github.com/ndjson>. 
-Discussion and help can be found on the issues page.
+Discussion and help is located at <https://github.com/ndjson/ndjson-spec/issues>. 
 
 ## A. References
 
