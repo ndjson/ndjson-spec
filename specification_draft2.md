@@ -1,6 +1,11 @@
-# NDJSON - Newline delimited JSON
+---
+title: NDJSON - Newline delimited JSON
+version: Draft 2
+last_update: 2014-09-25
+created: 2013-07-05
+---
 
-# Draft 2 (2014-09-25)
+# NDJSON - Newline delimited JSON
 
 A standard for delimiting JSON in stream protocols.
 
