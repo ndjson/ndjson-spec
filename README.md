@@ -1,7 +1,7 @@
 ---
 title: NDJSON - Newline delimited JSON
 version: 1.0.0
-last_update: 2014-10-12
+last_update: 2014-10-19
 created: 2013-07-05
 ---
 
