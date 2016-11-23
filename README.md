@@ -34,7 +34,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### 3.1 Serialization
 
-Each JSON text MUST conform to the \[[RFC7159]\] standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline charater MAY be preceeded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
+Each JSON text MUST conform to the \[[RFC7159]\] standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline character MAY be preceded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
 
 All serialized data MUST use the UTF8 encoding.
 
@@ -42,7 +42,7 @@ All serialized data MUST use the UTF8 encoding.
 
 The parser MUST accept newline as line delimiter `\n` (0x0A) as well as carriage return and newline `\r\n` (0x0D0A). 
 
-If the JSON text is not parseable, the parser SHOULD raise an error. The parser MAY silently ignore empty lines, e.g. `\n\n`. This behavior MUST be documented and SHOULD be configurable by the user of the parser.
+If the JSON text is not parsable, the parser SHOULD raise an error. The parser MAY silently ignore empty lines, e.g. `\n\n`. This behavior MUST be documented and SHOULD be configurable by the user of the parser.
 
 ### 3.3 MediaType and File Extensions
 
