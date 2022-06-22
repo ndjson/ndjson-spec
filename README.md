@@ -17,7 +17,6 @@ There is currently no standard for transporting instances of JSON text within a 
 
 A common use case for NDJSON is delivering multiple instances of JSON text through streaming protocols like TCP or UNIX Pipes. It can also be used to store semi-structured data.
 
-
 ### 1.2 Terminology
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119. \[[RFC2119]\]
 
@@ -86,25 +85,25 @@ Discussion and help is located at <https://github.com/ndjson/ndjson-spec/issues>
 
 ### A.1 Normative
 
-[RFC2119]: http://www.ietf.org/rfc/rfc2119.txt "RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels"
-\[RFC2119\]: RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels
+[RFC2119]: https://tools.ietf.org/html/rfc2119 "RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels"
+\[[RFC2119]\]: RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels
 
-[RFC7159]: http://www.ietf.org/rfc/rfc7159.txt "RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format"
-\[RFC7159\]: RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format
+[RFC7159]: https://tools.ietf.org/html/rfc7159 "RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format"
+\[[RFC7159]\]: RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format
 
-[RFC4627]: http://www.ietf.org/rfc/rfc4627.txt "RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)"
-\[RFC4627\]: RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)
+[RFC4627]: https://tools.ietf.org/html/rfc4627 "RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)"
+\[[RFC4627]\]: RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)
 
-[RFC4288]: http://www.ietf.org/rfc/rfc4288.txt "RFC 4288 - Media Type Specifications and Registration Procedures"
-\[RFC4288\]: RFC 4288 - Media Type Specifications and Registration Procedures
+[RFC4288]: https://tools.ietf.org/html/rfc4288 "RFC 4288 - Media Type Specifications and Registration Procedures"
+\[[RFC4288]\]: RFC 4288 - Media Type Specifications and Registration Procedures
 
-[RFC2616]: http://www.ietf.org/rfc/rfc2616.txt "RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1"
-\[RFC2616\]: RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1
+[RFC2616]: https://tools.ietf.org/html/rfc2616 "RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1"
+\[[RFC2616]\]: RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1
 
 ### A.1 Informative
 
-[TCP]: http://www.ietf.org/rfc/rfc793.txt "RFC 793 - Transmission Control Protocol"
-\[TCP\]: RFC 793 - Transmission Control Protocol
+[TCP]: https://tools.ietf.org/html/rfc793 "RFC 793 - Transmission Control Protocol"
+\[[TCP]\]: RFC 793 - Transmission Control Protocol
 
-[Websockets]: http://tools.ietf.org/html/rfc6455 "RFC 6455 - The WebSocket Protocol"
-\[Websockets\]: RFC 6455 - The WebSocket Protocol
+[Websockets]: https://tools.ietf.org/html/rfc6455 "RFC 6455 - The WebSocket Protocol"
+\[[Websockets]\]: RFC 6455 - The WebSocket Protocol
