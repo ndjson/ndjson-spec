@@ -33,7 +33,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ### 3.1 Serialization
 
-Each JSON text MUST conform to the \[[RFC7159]\] standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline character MAY be preceded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
+Each JSON text MUST conform to the \[[RFC8259]\] standard and MUST be written to the stream followed by the newline character `\n` (0x0A). The newline character MAY be preceded by a carriage return `\r` (0x0D). The JSON texts MUST NOT contain newlines or carriage returns.
 
 All serialized data MUST use the UTF8 encoding.
 
@@ -45,7 +45,7 @@ If the JSON text is not parsable, the parser SHOULD raise an error. The parser M
 
 ### 3.3 MediaType and File Extensions
 
-The MediaType \[[RFC4288]\] for Newline Delimited JSON SHOULD be _application/x-ndjson_.
+The MediaType \[[RFC6838]\] for Newline Delimited JSON SHOULD be _application/x-ndjson_.
 
 When saved to a file, the file extension SHOULD be _.ndjson_.
 
@@ -88,14 +88,14 @@ Discussion and help is located at <https://github.com/ndjson/ndjson-spec/issues>
 [RFC2119]: https://tools.ietf.org/html/rfc2119 "RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels"
 \[[RFC2119]\]: RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels
 
-[RFC7159]: https://tools.ietf.org/html/rfc7159 "RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format"
-\[[RFC7159]\]: RFC 7159 -  The JavaScript Object Notation (JSON) Data Interchange Format
+[RFC8259]: https://tools.ietf.org/html/rfc8259 "RFC 8259 -  The JavaScript Object Notation (JSON) Data Interchange Format"
+\[[RFC8259]\]: RFC 8259 -  The JavaScript Object Notation (JSON) Data Interchange Format
 
 [RFC4627]: https://tools.ietf.org/html/rfc4627 "RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)"
 \[[RFC4627]\]: RFC 4627 - The application/json Media Type for JavaScript Object Notation (JSON)
 
-[RFC4288]: https://tools.ietf.org/html/rfc4288 "RFC 4288 - Media Type Specifications and Registration Procedures"
-\[[RFC4288]\]: RFC 4288 - Media Type Specifications and Registration Procedures
+[RFC6838]: https://tools.ietf.org/html/rfc6838 "RFC 6838 - Media Type Specifications and Registration Procedures"
+\[[RFC6838]\]: RFC 6838 - Media Type Specifications and Registration Procedures
 
 [RFC2616]: https://tools.ietf.org/html/rfc2616 "RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1"
 \[[RFC2616]\]: RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1
